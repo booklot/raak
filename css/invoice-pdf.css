@@ -1,0 +1,93 @@
+@media print{
+*{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+}
+header, footer{ display: none!important; }
+
+html, body {
+	/*changing width to 100% causes huge overflow and wrap*/
+	height:100%; 
+	/*overflow: hidden;*/
+	background: #FFF; 
+	font-size: 9.5pt;
+}
+
+@media screen
+{
+	body{overflow-y:auto;}
+}
+
+.container{
+	width:100%!important;
+	float:none;
+}
+
+.row{
+	margin:0 auto!important;
+	float:none;
+}
+
+
+.invoice {
+	padding: 1% 2%!important;
+	color: #000;
+}
+
+table {
+	margin: 0 0 !important;
+	width: 98%;
+}
+
+.table thead{
+	border: 1px solid #ddd!important;
+	background: #e7e7e7!important;
+}
+
+.table th, .table td {
+	padding: 5px 0!important;
+	text-align: center;
+	vertical-align: top;
+	border-bottom: 1px solid #ccc!important;
+}
+
+.pull-right{float:right;}
+.pull-left{float:left;}
+.col-sm-4{width:33.3%}
+.col-sm-6{width:50%;}
+.col-sm-5{width:41.66%}
+
+.control-group{width:100%;}
+.control-label{
+	text-align:right;
+}
+.controls{
+	padding-left:3%;
+}
+
+.alignLeft{
+	color: #000!important;
+	text-align: right!important;
+	letter-spacing:2px;
+	padding-left:10px!important;
+	padding-right:12px!important;
+}
+
+.no-back
+{
+	background: none!important;
+	border:none!important;
+}
+
+.table-receipt{
+	width:100%;
+}
+@media print {
+  .hidden-print,
+  tr.hidden-print,
+  th.hidden-print,
+  td.hidden-print {
+    display: none !important;
+  }
+}

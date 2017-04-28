@@ -1,0 +1,77 @@
+.navbar-header.logo a
+{
+	background: transparent url(../img/cps-logo.png) no-repeat left center;
+	background-size: contain;
+	color: transparent!important;
+	display: inline-block;
+	float: left;
+}
+
+.topbar2
+{
+	background-image: url('../img/slider-bg.png');
+	background-color: #01A755;
+	background-repeat: repeat-x;
+	background-position: 0px;
+	margin-top: 52px;
+	padding-bottom: 25px;
+}
+
+.btn-gold
+{
+  color: #fff;
+  background-color: #eeb800;
+  border-color: #c59a06;
+}
+.btn-gold:focus,
+.btn-gold.focus {
+  color: #fff;
+  background-color: #c59a06;
+  border-color: #c59a06;
+}
+.btn-gold:hover {
+  color: #fff;
+  background-color: #c59a06;
+  border-color: #c59a06;
+}
+.btn-gold:active,
+.btn-gold.active,
+.open > .dropdown-toggle.btn-gold {
+  color: #fff;
+  background-color: #c59a06;
+  border-color: #c59a06;
+}
+.btn-gold:active:hover,
+.btn-gold.active:hover,
+.open > .dropdown-toggle.btn-gold:hover,
+.btn-gold:active:focus,
+.btn-gold.active:focus,
+.open > .dropdown-toggle.btn-gold:focus,
+.btn-gold:active.focus,
+.btn-gold.active.focus,
+.open > .dropdown-toggle.btn-gold.focus {
+  color: #fff;
+  background-color: #c59a06;
+  border-color: #c59a06;
+}
+.btn-gold:active,
+.btn-gold.active,
+.open > .dropdown-toggle.btn-gold {
+  background-image: none;
+}
+.btn-gold.disabled:hover,
+.btn-gold[disabled]:hover,
+fieldset[disabled] .btn-gold:hover,
+.btn-gold.disabled:focus,
+.btn-gold[disabled]:focus,
+fieldset[disabled] .btn-gold:focus,
+.btn-gold.disabled.focus,
+.btn-gold[disabled].focus,
+fieldset[disabled] .btn-gold.focus {
+  background-color: #c59a06;
+  border-color: #c59a06;
+}
+.btn-gold .badge {
+  color: #c59a06;
+  background-color: #fff;
+}

@@ -1,0 +1,64 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
+<div class="featuredItems">
+	<div class="titleHeader clearfix">
+		<h3>Hot Deals</h3>
+		<div class="pagers">
+			<div class="myCarousel-controls hidden-xs">
+				<a class="left btn btn-default btn-sm hidden-xs" href="#hot-deals" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a class="right btn btn-default btn-sm hidden-xs" href="#hot-deals" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div>
+			<!-- carousel controls -->
+		</div>
+	</div>
+	<div class="hProductItems" style="border:none;">
+		<div id="hot-deals" class="carousel slide">
+			<div class="carousel-inner" style="overflow: hidden;">
+				<?php foreach($special as $i=>$f):
+					if($f['permalink']) $link = $f['company_segment']."/products/{$f['id']}/{$f['segment']}";
+					else $link = "shops/{$f['company_id']}/{$f['company_segment']}/products/{$f['id']}/{$f['segment']}";
+					//$link = "shop/products/{$f['id']}/{$f['segment']}";?>
+				<div class="item <?php if($i==0) echo 'active';?> thumbnail noborder">
+					<?php $img=array('src'=>"images/products/280x160/{$f['image']}",'class'=>'replace-2x img-responsive pts-image', 
+						'alt'=>$f['name'], 'title'=>$f['name'], 'itemprop'=>'image' );
+						echo anchor( $link, img( $img ), 'class="img product_img_link" title="'.$f['name'].'" itemprop="url"' );?>
+						
+						<?php if($f['shipping']&&$f['shipping_cost']>0):?>
+							<span class="product-label free-shipping">
+								<span class="new-label">Free Shipping</span>
+							</span>
+						<?php endif;?>
+						
+					<div class="caption thumbSetting">
+						<h3 class="thumbTitle" itemprop="name" style="text-align:center;">
+							<?php echo anchor( $link, $f['name'], 
+							'class="invarseColor" title="'.$f['name'].'" itemprop="url"' );?>
+						</h3>
+						<meta itemprop="<?php echo $f['field1']?>" content="<?php echo $f['var1']?>">
+						<meta itemprop="<?php echo $f['field2']?>" content="<?php echo $f['var2']?>">
+						<p class="product-desc description" itemprop="description" style="text-align:center">
+							<?php echo character_limiter( $f['summary']?$f['summary']:$f['d_summary'], 100 );?>
+						</p>
+						<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" class="thumbPrice" 
+							style="text-align:center">
+							<span><span class="strike-through"><?php echo toc($f['old_price'])?></span></span>
+							<span itemprop="price" class="product-price"><?php echo toc($f['price'])?></span>
+							<meta itemprop="priceCurrency" content="USD">
+							<span><span class="price-percent-reduction">-<?php echo (int)($f['disc']*100);?><small>%</small></span></span>
+						</div>
+						<hr style="margin:15px 0 10px 0;" />
+						
+						<h3 class="thumbTitle" itemprop="name" style="text-align:center;">
+							<?php echo anchor( $link, 'GET OFFER', 'class="btn"' )?>
+						</h3>
+						
+					</div> <!-- thumbSetting -->
+				</div><!-- thumbnail -->
+				<?php endforeach;?>
+			</div><!-- carousel-inner -->
+		</div>
+	</div>
+</div>

@@ -1,0 +1,119 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
+	<div class="col-sm-12">
+		<div class="accordion" id="accordion2">
+			<div class="accordion-group checkout block block-<?php if($checkout['option']=='step1') echo 'danger'; else echo 'info'?>" id="step1">
+				<div class="checkout-outer">
+					<div class="accordion-heading">
+						<h4 class="title_block"><i class="icon-caret-down"></i> Step 1: Checkout Options
+							<?php if( $checkout['step']>1 && $checkout['step']<2 ):
+							$a = array( 'class'=>"invarseColor pull-right", 'rel'=>"tooltip", 'data-placment'=>"top", 'data-title'=>"EDIT",
+								'style'=>"margin-right:12px; color:#333; font-size:13px;" );
+								echo anchor( 'checkout/regress/1', '<i class="icon-pencil"></i>', $a );
+						endif;?>
+						</h4>
+					</div><!--end checkout-header-->
+					
+					<div id="<?php echo $checkout['option'];?>" class="accordion-body collapse<?php if($checkout['option']=='step1') echo ' in';?>">
+						<div class="accordion-inner">
+							<div class="login">
+								<table>
+									<tr>
+										<td width="50%">
+											<h3>New Customer</h3>
+											<p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep 
+												track of the orders you have previously made.
+											</p>
+											<?php echo anchor('account/register', lang('register'), 'class="btn btn-default"');?>
+										</td>
+
+										<td width="50%">
+											<h3>Returning Customer</h3>
+											<?php echo form_open( 'account/login', 'class="form-horizontal"' );?>
+												<div class="form-group">
+													<label for="identity" class="control-label">
+														Your E-Mail / Username: <span class="required">*</span></label>
+													<div class="col-sm-9 col-sm-offset-1">
+														<input type="text" id="identity" name="login_identity" 
+														value="<?php echo $this->input->post('login_identity');?>" 
+														placeholder="example@example.com" class="form-control input-sm" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="password" class="control-label">
+														Your Password: <span class="required">*</span></label>
+													<div class="col-sm-9 col-sm-offset-1">
+														<input type="password" id="password" name="login_password" 
+														value="<?php echo $this->input->post('login_password');?>" 
+														placeholder="**************" class="form-control input-sm" required>
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="checkbox">
+														<label><input type="checkbox" name="remember_me" 
+															value="1" checked> Remember Me</label>
+													</div>
+													<?php if (isset($captcha)): 
+														echo '<br clear="all"><div id="captcha" style="line-height:0">';
+														echo $captcha;
+														echo '</div><br clear="all">';
+													endif;?>
+												</div>
+												
+												<div class="form-group">
+													<div class="col-sm-9 col-sm-offset-2">
+														<?php echo anchor( 'account/forgot_password', 'Forgot Password', 
+														'class="btn btn-link btn-sm"' );?>
+														<button type="submit" class="btn btn-primary btn-sm" name="login_user" 
+															value="Login">Login</button>
+														<input type="hidden" name="form_name" value="login">
+														<input type="hidden" name="form_type" value="select">
+													</div>
+												</div>
+											</form><!--end form-->
+										</td>
+									</tr>
+								</table>
+							</div><!--end login-->
+							
+						</div> <!-- end of accordion inner -->
+					</div> <!-- end of accordion body -->
+				</div> <!-- end of checkout outer-->
+			</div> <!-- end of accordion group -->
+			
+			
+			<div class="accordion-group checkout block block-<?php if($checkout['option']=='payment_method') echo 'danger'; else echo 'info'?>"" id="step2">
+				<div class="checkout-outer">
+					<div class="accordion-heading">
+						<h4 class="title_block"><i class="icon-caret-down"></i> Step 2: Payment Method</h4>
+					</div><!--end checkout-header-->
+					
+					<div id="<?php echo $checkout['option'];?>" class="accordion-body collapse<?php if($checkout['option']=='payment_method') echo ' in';?>">
+						<div class="accordion-inner">
+							<?php if($checkout['option']=='payment_method')
+								$this->load->view($theme.'/shop/payment_method.tpl');?>
+						</div> <!-- end of accordion-inner-->
+					</div> <!-- end of accordion-body -->
+				</div> <!-- end of checkout-outer-->
+			</div> <!-- end of accordion group -->
+		
+			<div class="accordion-group checkout block block-<?php if($checkout['option']=='confirm_order') echo 'danger'; else echo 'info'?>"" id="step3">
+				<div class="checkout-outer">
+					<div class="accordion-heading">
+						<h4 class="title_block"><i class="icon-caret-down"></i> Step 3: Confirm Order</h4>
+					</div><!--end checkout-header-->
+					
+					<div id="<?php echo $checkout['option'];?>" class="accordion-body collapse<?php if($checkout['option']=='confirm_order') echo ' in';?>">
+						<div class="accordion-inner">
+							<?php if($checkout['option']=='confirm_order'):
+								$this->load->view($theme.'/shop/cart.tpl');
+							endif?>
+						
+						</div> <!-- end of accordion-inner-->
+					</div> <!-- end of accordion-body -->
+				</div> <!-- end of checkout-outer-->
+			</div> <!-- end of accordion group -->	
+
+		
+		</div> <!-- end of accordion2-->
+	</div> <!-- end of span12-->
+</div> <!-- end of row-->

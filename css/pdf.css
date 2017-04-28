@@ -1,0 +1,129 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+header, footer, aside, .breadcrumb, .productFilter, .flexslider, .thumbButtons, .carousel, .modal, #lhc_status_container, 
+#lhc_faq_container, .product-container .action, .product-container .old-price, .product-container .comments_note, 
+.product-container .product-label, .product-container hr, .search
+{
+	display: none!important;
+	width:0!important;
+	height:0!important;
+}
+
+html, body
+{
+	/*changing width to 100% causes huge overflow and wrap*/
+	height:100%; 
+	/*overflow: hidden;*/
+	background: #FFF; 
+	font-size: 9.5pt;
+}
+
+
+.thumbTitle a
+{
+	/*font-size: 14px;*/
+}
+
+a.visible-print
+{
+	text-decoration: none;
+}
+
+a.product-name, .product-price
+{
+	font-size: 17px;
+	color: #333;
+	text-decoration: none;
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.product-image-container img
+{
+	height: 100%;
+}
+
+li.ajax_block_product
+{
+	width: 100%!important;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: left;
+	margin-bottom: 20px;
+	display: block;
+	border-bottom: 1px solid #ccc;
+}
+
+div.product-container div.left-block
+{
+	width: 45%;
+	float: left;
+}
+
+div.product-container div.right-block
+{
+	width: 55%;
+	float: left;
+}
+
+
+.hidden-print, tr.hidden-print, th.hidden-print, td.hidden-print
+{
+	display: none !important;
+}
+
+.col-sm-*
+{
+	display: inline-block!important;
+	/*float:left!important;*/
+}
+
+.pull-right{float:right;}
+.pull-left{float:left;}
+
+.col-sm-4
+{
+	width:30%;
+	display: inline-block!important;
+	/*float:left!important;*/
+	margin: 10px 20px;
+}
+.col-sm-6{width:50%;}
+.col-sm-5{width:41.66%}
+
+
+.container{
+	width:100%!important;
+	float:none;
+}
+
+.row{
+	margin:0 auto!important;
+	float:none;
+}
+
+
+table {
+	margin: 0 0 !important;
+	width: 98%;
+	border-collapse: collapse;
+}
+
+.table thead{
+	border: 1px solid #ddd!important;
+	background: #e7e7e7!important;
+}
+
+.table th, .table td {
+	padding: 5px 0!important;
+	text-align: center;
+	vertical-align: top;
+	border-bottom: 1px solid #ccc!important;
+}
+
+
+
