@@ -18,17 +18,20 @@
 
 	<!-- Basic Page Needs
   ================================================== -->
-	<?php echo meta( 'charset', 'utf-8' );?>
-	<title><?php if(isset($title)): echo $title.' : '.lang('site_title');
-				else: echo lang('site_title');
-			endif;
-			echo $pn;
-			?>
-	</title>
+	<?php echo meta( 'charset', 'utf-8' );
+		$st = $this->config->item('site_name');
+		$sd = $this->config->item('site_description');
+		$sk = $this->config->item('site_keywords');
+	?>
+	<title><?php 
+		if(isset($title)) echo $title.' : '.$st;
+		else echo $st;
+		echo $pn;
+	?></title>
 	<?php
 		if(isset($page['summary'])) echo meta('description', $page['summary']);
 		elseif(isset($page['description'])) echo meta('description', $page['description']);
-		else echo meta('description', lang('description') );
+		else echo meta('description', $sd );
 	 ?>
 	
 	<?php
@@ -43,8 +46,8 @@
 	elseif(isset($page['segment'])):
 		$str = str_replace(array('/','-'), ',', $page['segment']);
 		$metakey = implode(', ', array_unique(explode(',',$str)) );
-		echo meta('keywords', $metakey);
-	else: echo meta( 'keywords', lang('keywords') );
+		echo meta('keywords', $metakey.", {$st}");
+	else: echo meta( 'keywords', $sk );
 	endif;?>
 	<meta name="author" content="BIT Technologies">
 	<meta name="msvalidate.01" content="BF7D4DE2BBB1A18BCFE60A8F881893F5" />
