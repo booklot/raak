@@ -75,8 +75,9 @@
 				echo link_tag($css);
 			endif;
 		endforeach;
-		
-	endif;?>
+	endif;
+	$this->load->view("{$theme}/css.tpl.php");
+	?>
 
 	
 	
