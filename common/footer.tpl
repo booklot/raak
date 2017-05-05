@@ -82,7 +82,7 @@
 					<div class="col-sm-6" style="border-right: dashed 1px #ccc;">
 						<h4>About Us</h4>
 						<p style="text-align: justify; padding-right: 3%;">
-							<?php echo auto_link( $this->config->item('site_description') );?> 
+							<?php echo word_limiter( $this->config->item('site_description'), 50 );?> 
 							<?php echo anchor( 'shop/about', 'Read More' );?>...
 						</p>
 						<br clear="all">
