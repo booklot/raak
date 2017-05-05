@@ -34,6 +34,7 @@
 *.csv
 .ftpquota
 img/logos*
+img/fav.png
 *_theme.php
 
 
