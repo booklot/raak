@@ -22,13 +22,15 @@
 			<div class="showItem inline pull-right">
 				Show 
 				<?php $options = array( 'id'=>'perpage', 'class'=>'btn btn-default btn-sm', 'onchange'=>"this.form.submit()" );
-					echo form_dropdown( 'per_page', $this->config->item('per_page'), $per, $options );?>
+					echo form_dropdown( 'per_page', $this->config->item('items_per_page'), $per, $options );
+					$sorts = $this->config->item('sort-by', "{$theme}_theme");
+				?>
 			</div>
 			<!--end sortBy-->
 			<div class="sortBy inline pull-right">
 				Sort By 
 				<select class="btn btn-default btn-sm" name="sort" onchange="this.form.submit()">
-					<?php $sorts = $this->config->item('sort-by');
+					<?php $sorts = $this->config->item('product_sort');
 						if(!isset($q)) unset($sorts[1]);
 						foreach($sorts as $k=>$v):
 							if( $k==$sort_id ) $s='selected'; else $s='';
