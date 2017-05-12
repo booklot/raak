@@ -4,7 +4,9 @@
 			<?php if(2>1):?>
 			<div class="compareItem inline pull-left">
 				<?php //echo anchor( 'compare', 'Product Compare (0)', 'class="btn"');?>
-				<?php echo $page['name'];?>
+				<?php echo $page['name']; 
+					echo (isset($total_rows) && $total_rows>0)?" ({$total_rows})":'';
+				?>
 			</div><!--end compareItem-->
 			<?php endif;?>
 
@@ -21,9 +23,10 @@
 			<!--end displaytBy-->
 			<div class="showItem inline pull-right">
 				Show 
-				<?php $options = array( 'id'=>'perpage', 'class'=>'btn btn-default btn-sm', 'onchange'=>"this.form.submit()" );
-					echo form_dropdown( 'per_page', $this->config->item('items_per_page'), $per, $options );
-					$sorts = $this->config->item('sort-by', "{$theme}_theme");
+				<?php $args = array( 'id'=>'perpage', 'class'=>'btn btn-default btn-sm', 'onchange'=>"this.form.submit()" );
+					$c = $this->config->item('items_per_page');
+					foreach($c as $v) $options[$v] = $v;
+					echo form_dropdown( 'per_page', $options, $per, $args );
 				?>
 			</div>
 			<!--end sortBy-->

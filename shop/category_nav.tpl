@@ -35,8 +35,8 @@
 					<div id="collapse<?php echo $c['id'];?>" <?php echo $cls;?>>
 						<div class="accordion-inner">
 					<ul class="submenu">
-						<?php echo '<small>'.anchor('shop/overview/'.$c['id'].'/'.$c['segment'],
-							lang('view-all').'...', 'class="invarseColor"').'</small>';?>
+						<?php echo '<small>'.anchor('shop/categories/'.$c['id'].'/'.$c['segment'],
+							'view all ...', 'class="invarseColor"').'</small>';?>
 						<?php foreach($subs as $sub):
 						if($active_cat==$sub['id'] ) $cls = 'class="invarseColor active"'; else $cls = 'class="invarseColor"';
 						?>
