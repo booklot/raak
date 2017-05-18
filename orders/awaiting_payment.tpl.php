@@ -13,14 +13,14 @@
 		<li>
 			<h4 class="panel-title">
 				<span class="fa fa-check-circle green"></span>
-				<span class="accordion-toggle light">Order Details</span>
+				<span class="accordion-toggle light">Delivery Method</span>
 			</h4>
 		</li>
 	</ol>
 	<ol class="breadcrumb">
 		<li>
 			<h4 class="panel-title">
-				<span class="fa fa-dot-circle-o"></span>
+				<span class="fa fa-dot-circle-o gold"></span>
 				<span class="accordion-toggle">Payment</span>
 			</h4>
 		</li>
@@ -29,7 +29,7 @@
 	<br clear="all">
 	<div class="col-sm-4 col-sm-offset-4">
 		<h3 class="text-center">
-			Total Amount - <strong><?php echo toc($invoice['total']);?></strong>
+			Total Amount: <strong><?php echo toc($invoice['total']);?></strong>
 		</h3>
 		<?php $hide='';?>
 		<div class="row">
