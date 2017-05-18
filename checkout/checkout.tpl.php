@@ -3,7 +3,9 @@
 	<div class="container">
 		<div class="panel-group" id="checkout">
 			<?php 
-				if( isset($checkout['step']) && $checkout['step']>=4 ):
+				if( isset($checkout['step']) && $checkout['step']==4 ):
+					$this->load->view($theme.'/checkout/new/delivery.tpl.php');
+				elseif( isset($checkout['step']) && $checkout['step']>4 ):
 					$this->load->view($theme.'/checkout/new/confirm_order.tpl.php');
 					$this->load->view($theme.'/checkout/new/delivery_method.tpl.php');
 				else:

@@ -6,6 +6,11 @@
 	background-color: <?=$this->config->item('header_color', "{$theme}_theme");?>; /*#ad946a*/
 }
 
+.gold
+{
+	color: <?=$this->config->item('search_button_color', "{$theme}_theme");?>;
+}
+
 .btn-gold
 {
   color: #fff;

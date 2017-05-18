@@ -1,28 +1,4 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
-<div class="panel panel-<?php if($checkout['option']=='delivery_method') echo 'primary'; else echo 'default';?>">
-	<div class="panel-heading">
-		<h4 class="panel-title">
-			<a class="accordion-toggle" data-toggle="collapse" data-parent="#checkout" href="#step4">
-				<?php 
-					if($checkout['option']=='delivery_method'):
-						echo 'Step 4: <strong>Delivery Method</strong>';
-					else:
-						echo "Step 4: Delivery Method";
-					endif;
-				?>
-			</a>
-			<?php 
-				if( $checkout['step']>4 ):
-					$a = array( 'class'=>"invarseColor pull-right", 'rel'=>"tooltip", 'data-placment'=>"top", 
-						'data-title'=>"EDIT", 'style'=>"margin-right:0px; color:#333; font-size:10px;" );
-					echo anchor( 'checkout/regress/4', '<i class="glyphicon glyphicon-pencil"></i>', $a );
-				endif;
-			?>
-		</h4>
-	</div>
-
-	<div id="step4" class="panel-collapse collapse <?php if($checkout['option']=='delivery_method') echo 'in';?>">
-		<div class="panel-body">
 			<?php if($checkout['option']=='delivery_method'):
 				echo form_open('checkout', 'id="delivery_method_form" class="form-horizontal"');?>
 	
@@ -46,8 +22,8 @@
 							</tr>
 						</thead>
 						<tbody>
-							<?php if( isset($shipping) && !isset($shipping['error']) ):
-								foreach( $shipping as $s ):?>
+							<?php if( isset($shipping_methods) && !isset($shipping_methods['error']) ):
+								foreach( $shipping_methods as $s ):?>
 									<tr style="cursor:pointer;">
 										<td colspan="1" onclick="click_radio_s(<?php echo $s['id']?>)" 
 											style="background:none;text-align:left; padding-left:1%;padding-bottom:0; border-bottom:none;" >
@@ -120,9 +96,3 @@
 							<h4><?php echo $cp;?></h4>
 						<?php endif;?>
 			<?php endif;?>
-		</div>
-		<!-- panel-body -->
-	</div>
-	<!-- #step2 panel-collapse -->
-</div>
-<!-- panel -->

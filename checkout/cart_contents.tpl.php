@@ -78,21 +78,21 @@ if( !empty($cart_items) ):
 						</tr> -->
 			<?php endforeach;?>
 			
-			<?php if( isset($checkout['step']) && $checkout['step']>=4 ):
-				if( isset($shipping['name']) ) $cp = $shipping['name'];
-				else $cp = 'select delivery method';?>
+			<?php if( isset($checkout['step']) && $checkout['step']>=50 ):
+				if( isset($payment['name']) ) $cp = $payment['name'];
+				else $cp = 'select payment method';?>
 				<tr>
 					<td colspan="3"></td>
 					<td colspan="5">
 						<div class="form_group">
 							<br clear="all">
 							<div class="col-xs-12 col-sm-12">
-								<label class="control-label">Delivery Method</label>
+								<label class="control-label">Payment Method</label>
 								<div class="input-group">
-									<span class="form-control" placeholder="Select delivery method" readonly><?php echo $cp;?></span>
+									<span class="form-control" placeholder="Select payment method" readonly><?php echo $cp;?></span>
 									<span class="input-group-btn">
-										<button class="btn btn-default" data-target="#shipping_method" data-toggle="modal" type="button">
-											<?php echo isset($shipping['name'])?'Change':'Select';?>
+										<button class="btn btn-default" data-target="#payment_method" data-toggle="modal" type="button">
+											<?php echo isset($payment['name'])?'Change':'Select';?>
 										</button>
 									</span>
 								</div><!-- /input-group -->
@@ -102,13 +102,17 @@ if( !empty($cart_items) ):
 					</td>
 				</tr>
 			<?php endif;?>
-			
 				<tr>
-					<td colspan=2" class="tleft" style="border-right:none;">
+					<td colspan="8" style="">
+						<br/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan=2" class="tleft" style="border:none;">
 						<!-- <button type="button" class="btn btn-default btn-sm" onclick="reset_sudo()">Reset</button> -->
 						<?php echo anchor( 'shopping_cart/destroy', 'Empty Cart', 'class="btn btn-default btn-sm"' );?>
 					</td>
-					<td colspan="6" class="tright" style="border-left:none;">
+					<td colspan="6" class="tright" style="border:none;">
 						<button type="submit" class="btn btn-info btn-sm" name="update_cart">Update Cart</button>
 					</td>
 				</tr>
